@@ -7,4 +7,9 @@
 
 int main(int argc, char **argv)
 {
+        if (argv[1][0] == '-') {
+                if (argv[1][1] == 'h') {
+                        help();
+                }
+        }
 }
