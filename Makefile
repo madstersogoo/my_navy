@@ -1,14 +1,22 @@
-NAME	= program
+NAME	= navy
 
-CC	= 
+CC	= gcc
 
 RM	= rm -f
 
-SRCS	= 
+SRCS	= ./lib/my_getnbr.c \
+	  ./lib/my_put_nbr.c \
+	  ./lib/my_putchar.c \
+	  ./lib/my_putstr.c \
+	  ./lib/my_strcpy.c \
+	  ./lib/my_strlen.c \
+	  ./lib/my_strligne.c \
+	  ./src/error.c \
+	  ./src/main.c
 
-OBJS	= $(SRCS:=.o)
+OBJS	= $(SRCS:.c=.o)
 
-CFLAGS = -I 
+CFLAGS = -I ./lib/include/
 CFLAGS += -Wall -Wextra
 
 all: $(NAME)
