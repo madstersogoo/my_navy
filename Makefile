@@ -1,3 +1,10 @@
+##
+## EPITECH PROJECT, 2020
+## make
+## File description:
+## make
+##
+
 NAME	= navy
 
 CC	= gcc
