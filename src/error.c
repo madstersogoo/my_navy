@@ -17,3 +17,9 @@ void help(void)
         my_putstr("     navy_positions: file representing the positions");
         my_putstr(" of the ships.\n");
 }
+
+void argument(void)
+{
+        my_putstr("second argument required\n");
+        my_putstr("do ./navy -h for more information\n");
+}
