@@ -1,17 +1,11 @@
-##
-## EPITECH PROJECT, 2020
-## make
-## File description:
-## make
-##
-
 NAME	= navy
 
 CC	= gcc
 
 RM	= rm -f
 
-SRCS	= ./lib/my_getnbr.c \
+SRCS	= ./lib/get_next_line.c \
+	  ./lib/my_getnbr.c \
 	  ./lib/my_put_nbr.c \
 	  ./lib/my_putchar.c \
 	  ./lib/my_putstr.c \
@@ -23,7 +17,7 @@ SRCS	= ./lib/my_getnbr.c \
 
 OBJS	= $(SRCS:.c=.o)
 
-CFLAGS = -I ./lib/include/
+CFLAGS = -I ./lib/
 CFLAGS += -Wall -Wextra
 
 all: $(NAME)

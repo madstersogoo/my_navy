@@ -16,5 +16,6 @@ int my_putstr(char const *str);
 char *my_strcpy(char *dest, char const *src);
 int my_strligne(char const *str);
 int my_strlen(char const *str);
+void help(void);
 
 #endif

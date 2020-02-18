@@ -5,6 +5,8 @@
 ** error
 */
 
+#include "../lib/include/my.h"
+
 void help(void)
 {
         my_putstr("USAGE\n");

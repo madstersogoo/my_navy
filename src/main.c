@@ -5,6 +5,8 @@
 ** main
 */
 
+#include "../lib/include/my.h"
+
 int main(int argc, char **argv)
 {
         if (argv[1][0] == '-') {
