@@ -8,13 +8,13 @@
 #include "get_next_line.h"
 #include "my.h"
 
-char **remove_barre(int n, int lg, char **map)
+char **remove_bowt(int n, int lg, char **map)
 {
     int compt;
 
     for (compt = my_strlen(map[lg]); compt != 0; compt--) {
-        if (map[lg][compt] == '|' && n != 0) {
-            map[lg][compt] = ' ';
+        if (map[lg][compt] == '.' && n != 0) {
+            map[lg][compt] = 'B';
             n--;
         }
         if (n == 0)
