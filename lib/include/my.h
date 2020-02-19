@@ -9,6 +9,9 @@
 #ifndef MY_H_
 #define MY_H_
 
+#include <sys/types.h>
+#include <unistd.h>
+
 int	my_getnbr(char const *str);
 void my_putchar(char c);
 int my_put_nbr(int nb);

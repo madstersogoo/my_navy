@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-        if (argc != 2) {
+        if (argc == 1) {
                 argument();
                 return (1);
         }
@@ -19,5 +19,14 @@ int main(int argc, char **argv)
                         return (1);
                 }
         }
+        if (argc == 2)
+                launch_player_one(argv);
         return (0);
+}
+
+void launch_player_one(char **argv)
+{
+        pid_t process_id;
+        process_id = getpid();
+        message_player_one(process_id);
 }
