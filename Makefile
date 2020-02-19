@@ -12,6 +12,7 @@ SRCS	= ./lib/get_next_line.c \
 	  ./lib/my_strcpy.c \
 	  ./lib/my_strlen.c \
 	  ./lib/my_strligne.c \
+	  ./lib/str_to_array.c \
 	  ./src/error.c \
 	  ./src/main.c \
 	  ./src/map/mapgen.c \
