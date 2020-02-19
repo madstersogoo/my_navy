@@ -13,3 +13,10 @@ void message_player_one(int pid)
         my_put_nbr(pid);
         my_putstr("\nwaiting for enemy connection...\n");
 }
+
+void message_player_two(int pid)
+{
+        my_putstr("my_pid:  ");
+        my_put_nbr(pid);
+        my_putstr("\nsuccesfully connected\n");
+}

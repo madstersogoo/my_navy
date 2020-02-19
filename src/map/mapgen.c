@@ -5,8 +5,8 @@
 ** map
 */
 
-#include "get_next_line.h"
-#include "my.h"
+#include "../../lib/get_next_line.h"
+#include "../../lib/include/my.h"
 
 char **remove_bowt(int n, int lg, char **map)
 {
