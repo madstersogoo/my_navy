@@ -8,6 +8,21 @@
 #include "get_next_line.h"
 #include "my.h"
 
+char **remove_barre(int n, int lg, char **map)
+{
+    int compt;
+
+    for (compt = my_strlen(map[lg]); compt != 0; compt--) {
+        if (map[lg][compt] == '|' && n != 0) {
+            map[lg][compt] = ' ';
+            n--;
+        }
+        if (n == 0)
+            return (map);
+    }
+    return (NULL);
+}
+
 char **pos_capt(char *line)
 {
     int n = 10;
