@@ -8,6 +8,29 @@
 #include "get_next_line.h"
 #include "my.h"
 
+char **pos_capt(char *line)
+{
+    int n = 10;
+    char **str = malloc(sizeof(char *) * (n + 2));
+    int ijk[] = {0, 0, 0};
+    str[0] = malloc(sizeof(char) * (my_strlen(line)) + 1);
+    while (line[ijk[0]] != '\0') {
+        if (line[ijk[0]] == ':') {
+            str[ijk[1]][ijk[2]] = '\0';
+            ijk[2] = 0;
+            ijk[1]++;
+            str[ijk[1]] = malloc(sizeof(char) * (my_strlen(line)) + 1);
+        } else {
+            str[ijk[1]][ijk[2]] = line[ijk[0]];
+            ijk[2]++;
+        }
+        ijk[0]++;
+    }
+    str[ijk[1]][ijk[2]] = '\0';
+    str[ijk[1] + 1] = NULL;
+    return (str);
+}
+
 char **map_navy()
 {
     char **tab = malloc(sizeof(char *) * 10);
