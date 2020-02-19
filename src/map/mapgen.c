@@ -5,8 +5,8 @@
 ** map
 */
 
-#include "../../lib/get_next_line.h"
-#include "../../lib/include/my.h"
+#include "../lib/get_next_line.h"
+#include "../lib/include/my.h"
 
 char **remove_bowt(int n, int lg, char **map)
 {
@@ -48,13 +48,10 @@ char **pos_capt(char *line)
 
 char **map_navy(void)
 {
-    char **tab = malloc(sizeof(char *) * 10);
-    int i = 0;
+    char **tab;
     int fd = open("./src/map/map.txt", O_RDONLY);
-    while (i != 10) {
+    int i = 0;
+    for (i = 0; tab[i] != NULL; i++)
         tab[i] = get_next_line(fd);
-        ++i;
-    }
-    tab[i] = 0;
     return (tab);
 }
