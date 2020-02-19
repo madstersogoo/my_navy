@@ -23,6 +23,8 @@ int my_strlen(char const *str);
 void help(void);
 void argument(void);
 void message_player_one(int pid);
+void message_player_two(int pid);
 void launch_player_one(char **argv);
+void launch_player_two(char **argv);
 
 #endif
