@@ -14,7 +14,8 @@ SRCS	= ./lib/get_next_line.c \
 	  ./lib/my_strligne.c \
 	  ./src/error.c \
 	  ./src/main.c \
-	  ./src/message.c 
+	  ./src/map/mapgen.c \
+	  ./src/message.c
 
 OBJS	= $(SRCS:.c=.o)
 
