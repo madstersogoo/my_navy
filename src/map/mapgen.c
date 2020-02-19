@@ -46,7 +46,7 @@ char **pos_capt(char *line)
     return (str);
 }
 
-char **map_navy()
+char **map_navy(void)
 {
     char **tab = malloc(sizeof(char *) * 10);
     int i = 0;
