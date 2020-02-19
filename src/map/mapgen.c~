@@ -1,0 +1,20 @@
+/*
+** EPITECH PROJECT, 2020
+** map
+** File description:
+** map
+*/
+
+char **map_navy()
+{
+    char **tab = malloc(sizeof(char *) * 10);
+  int i = 0;
+  int fd = open("./log/map.txt", O_RDONLY);
+  while (i != 10)
+{
+      tab[i] = get_next_line(fd);
+      ++i;
+    }
+  tab[i] = 0;
+  return (tab);
+}
