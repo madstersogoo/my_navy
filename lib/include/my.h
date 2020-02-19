@@ -20,5 +20,8 @@ char *my_strcpy(char *dest, char const *src);
 int my_strligne(char const *str);
 int my_strlen(char const *str);
 void help(void);
+void argument(void);
+void message_player_one(int pid);
+void launch_player_one(char **argv);
 
 #endif
