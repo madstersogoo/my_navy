@@ -11,6 +11,7 @@
 
 #include <sys/types.h>
 #include <unistd.h>
+#include <signal.h>
 
 int	my_getnbr(char const *str);
 void my_putchar(char c);
