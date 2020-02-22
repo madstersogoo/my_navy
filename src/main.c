@@ -28,9 +28,15 @@ int main(int argc, char **argv)
 
 void launch_player_one(char **argv)
 {
+        int connection;
         pid_t process_id;
         process_id = getpid();
         message_player_one(process_id);
+        while (connection != 1) {
+                connection = signal(SIGUSR1, handling);
+        }
+        if (connection == 1)
+                connected_enemy();
 }
 
 void launch_player_two(char **argv)
@@ -38,4 +44,15 @@ void launch_player_two(char **argv)
         pid_t process_id;
         process_id = getpid();
         message_player_two(process_id);
+        kill(argv[1], SIGUSR1);
+        my_putstr(argv[1]);
+        int connection = signal(SIGUSR2, handling);
+}
+
+int handling(int signum)
+{
+        if (signum == SIGUSR1)
+                return (1);
+        else
+                return (0);
 }

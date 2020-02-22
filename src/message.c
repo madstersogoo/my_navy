@@ -20,3 +20,8 @@ void message_player_two(int pid)
         my_put_nbr(pid);
         my_putchar('\n');
 }
+
+void connected_enemy(void)
+{
+        my_putstr("enemy connected\n");
+}
