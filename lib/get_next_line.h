@@ -24,5 +24,6 @@ typedef struct strchain {
 } strchain_t;
 
 char *my_read(const int port, long int *full_len);
+char *get_next_line(int fd);
 
 #endif /* GET_NEXT_LINE_H_ */
