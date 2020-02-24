@@ -25,7 +25,8 @@ void message_player_one(int pid);
 void message_player_two(int pid);
 void launch_player_one(char **argv);
 void launch_player_two(char **argv);
-int handling(int signum);
+void handling(int signum);
 void connected_enemy(void);
+void handler(int signum);
 
 #endif
