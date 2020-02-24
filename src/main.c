@@ -13,6 +13,7 @@ void launch_player_one(char **argv, memory_t* shared)
     process_id = getpid();
     message_player_one(process_id);
     signal(SIGUSR1, handling);
+    my_put_nbr(shared->pid);
     pause ();
     connected_enemy();
     my_put_nbr(shared->pid);
@@ -24,10 +25,11 @@ void launch_player_two(char **argv, memory_t* shared)
     pid_t pid2 = my_getnbr(argv[1]);
     shared->pid = getpid();
     message_player_two(shared->pid);
+    my_put_nbr(shared->pid);
+    my_putchar('\n');
+    my_putstr(argv[1]);
     sleep (10);
     kill(pid2, SIGUSR1);
-    my_put_nbr(shared->pid);
-    my_putstr(argv[1]);
     signal(SIGUSR2, handler);
     pause ();
 }
