@@ -13,7 +13,6 @@ void launch_player_one(char **argv)
     pid_t process_id;
     process_id = getpid();
     message_player_one(process_id);
-    sleep (10);
     signal(SIGUSR1, handling);
     pause ();
     connected_enemy();
@@ -21,10 +20,11 @@ void launch_player_one(char **argv)
 
 void launch_player_two(char **argv)
 {
+    pid_t pid2 = my_getnbr(argv[1]);
     pid_t process_id;
     process_id = getpid();
     message_player_two(process_id);
-    kill(argv[1], SIGUSR1);
+    kill(pid2, SIGUSR1);
     signal(SIGUSR2, handler);
     my_putstr(argv[1]);
     pause ();
@@ -33,14 +33,12 @@ void launch_player_two(char **argv)
 void handling(int signum)
 {
     if (signum == SIGUSR1) {
-        my_putstr("test connection");
     }
 }
 
 void handler(int signum)
 {
     if (signum == SIGUSR2) {
-        my_putstr("test connection");
     }
 }
 
