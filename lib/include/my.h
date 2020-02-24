@@ -11,6 +11,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <signal.h>
+#include "../../src/stucture/structure.h"
 
 int my_getnbr(char const *str);
 void my_putchar(char c);
@@ -23,8 +24,8 @@ void help(void);
 void argument(void);
 void message_player_one(int pid);
 void message_player_two(int pid);
-void launch_player_one(char **argv);
-void launch_player_two(char **argv);
+void launch_player_one(char **argv, memory_t* shared);
+void launch_player_two(char **argv, memory_t* shared);
 void handling(int signum);
 void connected_enemy(void);
 void handler(int signum);

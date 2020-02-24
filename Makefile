@@ -28,7 +28,7 @@ SRCS	= ./lib/get_next_line.c \
 OBJS	= $(SRCS:.c=.o)
 
 CFLAGS = -I ./lib/
-CFLAGS += -Wall -Wextra
+CFLAGS += -Wall -Wextra -g3
 
 all: $(NAME)
 

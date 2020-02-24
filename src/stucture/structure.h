@@ -5,7 +5,10 @@
 ** navy
 */
 
-struct memory{
-        int pid;
+
+typedef struct memory{
+        pid_t pid;
         int move;
-};
+}memory_t;
+
+

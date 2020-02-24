@@ -6,11 +6,8 @@
 */
 
 #include "../lib/include/my.h"
-#include "../src/stucture/structure.h"
 
-struct memory* shared;
-
-void launch_player_one(char **argv)
+void launch_player_one(char **argv, memory_t* shared)
 {
     pid_t process_id;
     process_id = getpid();
@@ -19,17 +16,14 @@ void launch_player_one(char **argv)
     pause ();
     connected_enemy();
     my_put_nbr(shared->pid);
-    pid_t pid_player_two = shared->pid;
-    kill(pid_player_two,SIGUSR2);
+    kill(shared->pid,SIGUSR2);
 }
 
-void launch_player_two(char **argv)
+void launch_player_two(char **argv, memory_t* shared)
 {
     pid_t pid2 = my_getnbr(argv[1]);
-    pid_t process_id;
-    process_id = getpid();
-    shared->pid = process_id;
-    message_player_two(process_id);
+    shared->pid = getpid();
+    message_player_two(shared->pid);
     sleep (10);
     kill(pid2, SIGUSR1);
     my_put_nbr(shared->pid);
@@ -52,6 +46,7 @@ void handler(int signum)
 
 int main(int argc, char **argv)
 {
+    memory_t* shared = malloc(sizeof(memory_t));
     if (argc == 1) {
         argument();
         return (1);
@@ -63,8 +58,8 @@ int main(int argc, char **argv)
         }
     }
     if (argc == 2)
-        launch_player_one(argv);
+        launch_player_one(argv, shared);
     if (argc == 3)
-        launch_player_two(argv);
+        launch_player_two(argv, shared);
     return (0);
 }
