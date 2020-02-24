@@ -7,6 +7,12 @@
 
 #include "../lib/include/my.h"
 
+struct memory {
+    int pid_player_two, move;
+};
+
+struct memory* shared;
+
 void launch_player_one(char **argv)
 {
     int connection;
@@ -16,6 +22,8 @@ void launch_player_one(char **argv)
     signal(SIGUSR1, handling);
     pause ();
     connected_enemy();
+    my_put_nbr(pid_player_two);
+    kill(pid_player_two,SIGUSR2);
 }
 
 void launch_player_two(char **argv)
@@ -24,6 +32,7 @@ void launch_player_two(char **argv)
     pid_t process_id;
     process_id = getpid();
     message_player_two(process_id);
+    sleep (10);
     kill(pid2, SIGUSR1);
     signal(SIGUSR2, handler);
     my_putstr(argv[1]);
