@@ -5,7 +5,6 @@
 ** navy
 */
 
-
 #ifndef MY_H_
 #define MY_H_
 
@@ -13,7 +12,7 @@
 #include <unistd.h>
 #include <signal.h>
 
-int	my_getnbr(char const *str);
+int my_getnbr(char const *str);
 void my_putchar(char c);
 int my_put_nbr(int nb);
 int my_putstr(char const *str);
