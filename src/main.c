@@ -6,23 +6,20 @@
 */
 
 #include "../lib/include/my.h"
-
-struct memory {
-    int pid_player_two, move;
-};
+#include "../src/stucture/structure.h"
 
 struct memory* shared;
 
 void launch_player_one(char **argv)
 {
-    int connection;
     pid_t process_id;
     process_id = getpid();
     message_player_one(process_id);
     signal(SIGUSR1, handling);
     pause ();
     connected_enemy();
-    my_put_nbr(pid_player_two);
+    my_put_nbr(shared->pid);
+    pid_t pid_player_two = shared->pid;
     kill(pid_player_two,SIGUSR2);
 }
 
@@ -31,11 +28,13 @@ void launch_player_two(char **argv)
     pid_t pid2 = my_getnbr(argv[1]);
     pid_t process_id;
     process_id = getpid();
+    shared->pid = process_id;
     message_player_two(process_id);
     sleep (10);
     kill(pid2, SIGUSR1);
-    signal(SIGUSR2, handler);
+    my_put_nbr(shared->pid);
     my_putstr(argv[1]);
+    signal(SIGUSR2, handler);
     pause ();
 }
 
