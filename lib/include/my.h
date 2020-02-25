@@ -11,6 +11,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <signal.h>
+#include <stdlib.h>
 #include "../../src/stucture/structure.h"
 
 int my_getnbr(char const *str);
